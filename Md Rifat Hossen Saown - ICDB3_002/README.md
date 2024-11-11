@@ -58,14 +58,7 @@ git add -p
 ```
 
 **Example:**
-```bash
-$ git add src/app.js
-$ git status
-On branch main
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-        modified:   src/app.js
-```
+![Git Add](./screenshot/Screenshot_1.png)
 
 ## Git Commit
 Records changes to the repository.
@@ -89,12 +82,7 @@ git commit -m "Add user authentication feature" -m "- Implement login/logout fun
 ```
 
 **Example:**
-```bash
-$ git add src/app.js
-$ git commit -m "feat: add user authentication"
-[main 5d6e8f9] feat: add user authentication
- 1 file changed, 25 insertions(+), 2 deletions(-)
-```
+![Git Commit](./screenshot/Screenshot_2.png)
 
 ## Git Push
 Uploads local repository content to a remote repository.
@@ -114,17 +102,7 @@ git push --all
 ```
 
 **Example:**
-```bash
-$ git push origin main
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 2.95 KiB | 2.95 MiB/s, done.
-Total 3 (delta 2), reused 0 (delta 0)
-To github.com:username/repo.git
-   8d5e7f9..5d6e8f9  main -> main
-```
+![Git Push](./screenshot/Screenshot_3.png)
 
 ## Git Pull
 Fetches and integrates changes from a remote repository.
@@ -141,18 +119,7 @@ git pull --rebase
 ```
 
 **Example:**
-```bash
-$ git pull origin main
-remote: Enumerating objects: 5, done.
-remote: Counting objects: 100% (5/5), done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 3 (delta 1), reused 3 (delta 1)
-Unpacking objects: 100% (3/3), done.
-From github.com:username/repo
- * branch            main       -> FETCH_HEAD
-   8d5e7f9..5d6e8f9  main       -> origin/main
-Updating 8d5e7f9..5
-```
+![Git Pull](./screenshot/Screenshot_4.png)
 
 ## Git Fetch
 Downloads objects and refs from a remote repository without integrating changes.
@@ -172,16 +139,7 @@ git fetch -p
 ```
 
 **Example:**
-```bash
-$ git fetch --all
-Fetching origin
-remote: Enumerating objects: 3, done.
-remote: Counting objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 0 (delta 0)
-Unpacking objects: 100% (3/3), done.
-From github.com:username/repo
-   5d6e8f9..7a9b2c3  feature-branch -> origin/feature-branch
-```
+![Git Fetch](./screenshot/Screenshot_5.png)
 
 ## Git Rebase
 Reapplies commits on top of another base.
@@ -199,28 +157,9 @@ git rebase --abort
 # Skip the current commit and continue
 git rebase --skip
 ```
+
 **Example:**
-```bash
-$ git reflog
-7a9b2c3 HEAD@{0}: commit: Add payment integration
-5d6e8f9 HEAD@{1}: commit: Add user authentication
-8d5e7f9 HEAD@{2}: commit: Add user session management
-7a9b2c3 HEAD@{3}: commit: Initial commit
-
-
-$ git rebase -i HEAD~3
-# In editor, change:
-pick 8d5e7f9 Add user session management
-edit 5d6e8f9 Add user authentication #changed
-pick 7a9b2c3 Add payment integration
-
-
-# After making changes:
-$ git add src/auth.js
-$ git commit --amend
-$ git rebase --continue
-Successfully rebased and updated refs/heads/main.
-```
+![Git Rebase](./screenshot/Screenshot_6.png)
 
 ## Git Reflog
 Shows a log of changes to the local repository's HEAD.
@@ -230,13 +169,7 @@ Shows a log of changes to the local repository's HEAD.
 git reflog
 ```
 **Example:**
-```bash
-$ git reflog
-7a9b2c3 HEAD@{0}: rebase finished: returning to refs/heads/main
-7a9b2c3 HEAD@{1}: rebase: Add payment integration
-5d6e8f9 HEAD@{2}: rebase: Add user authentication
-8d5e7f9 HEAD@{3}: checkout: moving from main to 5d6e8f9
-```
+![Git Reflog](./screenshot/Screenshot_7.png)
 
 
 ## Git Log
@@ -259,12 +192,7 @@ git log --author="username"
 git log --since="2 weeks ago"
 ```
 **Example:**
-```bash
-$ git log --oneline --graph --decorate
-* 7a9b2c3 (HEAD -> main, origin/main) Add payment integration
-* 5d6e8f9 Add user authentication
-* 8d5e7f9 Initial commit
-```
+![Git Log](./screenshot/Screenshot_8.png)
 
 ## Git Reset
 Resets the current HEAD to a specified state.
@@ -293,15 +221,4 @@ git reset --hard origin/main
 git reset --hard HEAD@{1}
 ```
 **Example:**
-```bash
-$ git reset --hard HEAD~1
-HEAD is now at 5d6e8f9 Add user authentication
-
-$ git reflog
-5d6e8f9 HEAD@{0}: reset: moving to HEAD~1
-7a9b2c3 HEAD@{1}: commit: Add payment integration
-
-# Undo the reset
-$ git reset --hard HEAD@{1}
-HEAD is now at 7a9b2c3 Add payment integration
-```
+![Git Reset](./screenshot/Screenshot_9.png)
