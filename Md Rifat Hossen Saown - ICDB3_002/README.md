@@ -171,7 +171,6 @@ git reflog
 **Example:**
 ![Git Reflog](./screenshot/Screenshot_7.png)
 
-
 ## Git Log
 Shows commit logs.
 
